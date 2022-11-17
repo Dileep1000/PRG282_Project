@@ -38,7 +38,7 @@ namespace PRG282_Project
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            string Username = "BelgiumCampus", Password = "Programming";
+            string Username = "BelgiumCampusITversity", Password = "Programming";
             
 
             if (txt_UserName.Text == Username && txt_PasswordLogin.Text == Password)
