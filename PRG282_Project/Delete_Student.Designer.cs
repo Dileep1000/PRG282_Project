@@ -40,9 +40,9 @@
             // dataGridView_DeleteStd
             // 
             this.dataGridView_DeleteStd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_DeleteStd.Location = new System.Drawing.Point(53, 173);
+            this.dataGridView_DeleteStd.Location = new System.Drawing.Point(53, 154);
             this.dataGridView_DeleteStd.Name = "dataGridView_DeleteStd";
-            this.dataGridView_DeleteStd.Size = new System.Drawing.Size(615, 251);
+            this.dataGridView_DeleteStd.Size = new System.Drawing.Size(615, 270);
             this.dataGridView_DeleteStd.TabIndex = 41;
             // 
             // btn_DeleteStudent

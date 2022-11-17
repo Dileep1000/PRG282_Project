@@ -56,11 +56,10 @@ namespace PRG282_Project
                 form.ShowDialog();
                 this.Hide();
             }
-            else if (txt_UserName.Text != Username && txt_PasswordLogin.Text != Password)
+            else if (txt_UserName.Text != Username || txt_PasswordLogin.Text != Password)
             {
                 MessageBox.Show("This account does not exist! Click Register below to Redirect to Registration Page to Create a New Account.");
             }
-
         }
 
         private void btn_ClrFields_Click(object sender, EventArgs e)

@@ -10,7 +10,7 @@ namespace PRG282_Project
     public class FileHandler
     {
         List<string> outContents = new List<string>();
-           
+        List<string> outContents2 = new List<string>();
         public string filePath = @"C:\Users\Dilee\Desktop\Client Credentials.txt";
 
         public void Write(List<ClientCredentials> lst) 
@@ -24,6 +24,19 @@ namespace PRG282_Project
                 }
                 File.WriteAllLines(filePath, outContents);
             }
+        }
+        public void WriteRegistration(List<ClientRegistration> list) 
+        {
+            FileStream stream = new FileStream(filePath, FileMode.Create);
+
+            StreamWriter wr = new StreamWriter(stream);
+
+            foreach (ClientRegistration item in list)
+            {
+                outContents2.Add(item.ToString());
+                wr.Close();
+            }
+            File.AppendAllLines(filePath, outContents2);
         }
     }
 }

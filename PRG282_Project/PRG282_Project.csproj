@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientCredentials.cs" />
+    <Compile Include="ClientRegistration.cs" />
     <Compile Include="Create_Student.cs">
       <SubType>Form</SubType>
     </Compile>
