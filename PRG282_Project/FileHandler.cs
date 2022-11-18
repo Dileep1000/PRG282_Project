@@ -11,7 +11,7 @@ namespace PRG282_Project
     {
         List<string> outContents = new List<string>();
         List<string> outContents2 = new List<string>();
-        public string filePath = @"C:\Users\Dilee\Desktop\Client Credentials.txt";
+        public string filePath = @"C:\Users\Dilee\Desktop\PRG282_Project\PRG282_Project\bin\Debug\Client Credentials.txt";
 
         public void Write(List<ClientCredentials> lst) 
         {

@@ -66,6 +66,8 @@
             this.dataGridView_StudentData.Name = "dataGridView_StudentData";
             this.dataGridView_StudentData.Size = new System.Drawing.Size(645, 298);
             this.dataGridView_StudentData.TabIndex = 2;
+            this.dataGridView_StudentData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView_StudentData_CellPainting);
+            this.dataGridView_StudentData.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView_StudentData_Paint);
             // 
             // Read_Students
             // 

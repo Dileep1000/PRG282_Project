@@ -88,7 +88,7 @@
             this.btn_UpdateStudent.BackColor = System.Drawing.Color.Bisque;
             this.btn_UpdateStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_UpdateStudent.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_UpdateStudent.Location = new System.Drawing.Point(322, 410);
+            this.btn_UpdateStudent.Location = new System.Drawing.Point(308, 411);
             this.btn_UpdateStudent.Name = "btn_UpdateStudent";
             this.btn_UpdateStudent.Size = new System.Drawing.Size(162, 49);
             this.btn_UpdateStudent.TabIndex = 31;

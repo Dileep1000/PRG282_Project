@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace PRG282_Project
 {
     public partial class Update_Student : Form
     {
         public SqlConnection con;
-        public string ImageLocation = "";
+        public DataHandler handler = new DataHandler();
+        public string imgLocation;
         public Update_Student()
         {
             con = new SqlConnection("Data Source=DESKTOP-9K6ENBP\\SQLEXPRESS;Initial Catalog=PRG282_PROJECT_DB;Integrated Security=True");
@@ -23,7 +25,43 @@ namespace PRG282_Project
 
         private void btn_UpdateStudent_Click(object sender, EventArgs e)
         {
+            int StudentNumber = int.Parse(txt_StudentNo.Text);
+            int Phone = int.Parse(txt_Phone.Text);
 
+            byte[] Images = File.ReadAllBytes(imgLocation);
+
+            con.Open();
+
+            try
+            {
+
+                handler.UpdateData(StudentNumber, txt_StdName.Text, txt_StdSurname.Text, Images, txt_Birthdate.Text, txt_Gender.Text
+                    , Phone, txt_Address.Text, txt_ModCode.Text, txt_ModName.Text, txt_ModDescrip.Text,
+                    txt_Resources.Text);
+                //command.Parameters.Add(new SqlParameter("@Images", img));
+                //command.Parameters.Add("@Images", SqlDbType.VarBinary, 8000).Value = img;
+
+                MessageBox.Show("Data has been successfully updated in the database");
+
+                txt_StudentNo.Clear();
+                txt_StdName.Clear();
+                txt_StdSurname.Clear();
+                txt_Gender.Clear();
+                txt_Address.Clear();
+                txt_Birthdate.Clear();
+                txt_ModCode.Clear();
+                txt_ModName.Clear();
+                txt_ModDescrip.Clear();
+                txt_Phone.Clear();
+                txt_Resources.Clear();
+                pictureBox_StdImage = null;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+                MessageBox.Show("The data could not be updated in the database!", "Please try again.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
         }
 
         private void btn_BrowseImg_Click(object sender, EventArgs e)
@@ -33,8 +71,8 @@ namespace PRG282_Project
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                ImageLocation = openFileDialog.FileName.ToString();
-                pictureBox_StdImage.ImageLocation = ImageLocation;
+                imgLocation = openFileDialog.FileName.ToString();
+                pictureBox_StdImage.ImageLocation = imgLocation;
             }
         }
     }

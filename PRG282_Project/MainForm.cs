@@ -79,5 +79,10 @@ namespace PRG282_Project
         {
 
         }
+
+        private void Content_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

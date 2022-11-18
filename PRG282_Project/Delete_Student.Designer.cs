@@ -34,6 +34,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_StdNo = new System.Windows.Forms.Label();
             this.lbl_DeleteStudent = new System.Windows.Forms.Label();
+            this.btn_Read = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_DeleteStd)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +43,7 @@
             this.dataGridView_DeleteStd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_DeleteStd.Location = new System.Drawing.Point(53, 154);
             this.dataGridView_DeleteStd.Name = "dataGridView_DeleteStd";
-            this.dataGridView_DeleteStd.Size = new System.Drawing.Size(615, 270);
+            this.dataGridView_DeleteStd.Size = new System.Drawing.Size(618, 270);
             this.dataGridView_DeleteStd.TabIndex = 41;
             // 
             // btn_DeleteStudent
@@ -50,7 +51,7 @@
             this.btn_DeleteStudent.BackColor = System.Drawing.Color.Bisque;
             this.btn_DeleteStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DeleteStudent.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DeleteStudent.Location = new System.Drawing.Point(438, 94);
+            this.btn_DeleteStudent.Location = new System.Drawing.Point(390, 98);
             this.btn_DeleteStudent.Name = "btn_DeleteStudent";
             this.btn_DeleteStudent.Size = new System.Drawing.Size(103, 33);
             this.btn_DeleteStudent.TabIndex = 40;
@@ -60,7 +61,7 @@
             // 
             // txt_StudentNo
             // 
-            this.txt_StudentNo.Location = new System.Drawing.Point(273, 101);
+            this.txt_StudentNo.Location = new System.Drawing.Point(225, 105);
             this.txt_StudentNo.Name = "txt_StudentNo";
             this.txt_StudentNo.Size = new System.Drawing.Size(143, 20);
             this.txt_StudentNo.TabIndex = 39;
@@ -68,7 +69,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(258, 101);
+            this.label7.Location = new System.Drawing.Point(210, 105);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(0, 13);
             this.label7.TabIndex = 37;
@@ -77,7 +78,7 @@
             // 
             this.lbl_StdNo.AutoSize = true;
             this.lbl_StdNo.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_StdNo.Location = new System.Drawing.Point(172, 101);
+            this.lbl_StdNo.Location = new System.Drawing.Point(124, 105);
             this.lbl_StdNo.Name = "lbl_StdNo";
             this.lbl_StdNo.Size = new System.Drawing.Size(86, 17);
             this.lbl_StdNo.TabIndex = 38;
@@ -94,12 +95,26 @@
             this.lbl_DeleteStudent.TabIndex = 36;
             this.lbl_DeleteStudent.Text = "Delete Student Section";
             // 
+            // btn_Read
+            // 
+            this.btn_Read.BackColor = System.Drawing.Color.Bisque;
+            this.btn_Read.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Read.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btn_Read.Location = new System.Drawing.Point(499, 98);
+            this.btn_Read.Name = "btn_Read";
+            this.btn_Read.Size = new System.Drawing.Size(103, 33);
+            this.btn_Read.TabIndex = 0;
+            this.btn_Read.Text = "Read Data";
+            this.btn_Read.UseVisualStyleBackColor = false;
+            this.btn_Read.Click += new System.EventHandler(this.btn_Read_Click);
+            // 
             // Delete_Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(721, 491);
+            this.Controls.Add(this.btn_Read);
             this.Controls.Add(this.dataGridView_DeleteStd);
             this.Controls.Add(this.btn_DeleteStudent);
             this.Controls.Add(this.txt_StudentNo);
@@ -123,5 +138,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbl_StdNo;
         private System.Windows.Forms.Label lbl_DeleteStudent;
+        private System.Windows.Forms.Button btn_Read;
     }
 }

@@ -15,8 +15,9 @@ namespace PRG282_Project
 {
     public partial class Create_Student : Form
     {
+        public DataHandler handler = new DataHandler();
         public SqlConnection con;
-        public string imgLocation = "";
+        public string imgLocation;
         public Create_Student()
         {    
             con = new SqlConnection("Data Source=DESKTOP-9K6ENBP\\SQLEXPRESS;Initial Catalog=PRG282_PROJECT_DB;Integrated Security=True");
@@ -28,27 +29,19 @@ namespace PRG282_Project
             int StudentNumber = int.Parse(txt_StudentNo.Text); 
             int Phone = int.Parse(txt_Phone.Text);
 
-            byte[] Images = null;
-            FileStream fs = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            Images = br.ReadBytes((int)fs.Length);
-
+            byte[] Images = File.ReadAllBytes(imgLocation);
+            
             con.Open();
 
-          
             try
             {
 
-                string insertQuery = @"INSERT INTO Student_Info(StudentNumber, Name, Surname, Picture, DateOfBirth, Gender, Phone, " +
-                    "Address, ModuleCode, ModuleName, ModuleDescription, OnlineResources) VALUES('" + StudentNumber + "','" +
-                    txt_StdName.Text + "','" + txt_StdSurname.Text + "','" + "@Images" + "','" + txt_Birthdate.Text + "','" +
-                    txt_Gender.Text + "','" + Phone + "','" + txt_Address.Text + "','" + txt_ModCode.Text + "','" +
-                    txt_ModName.Text + "','" + txt_ModDescrip.Text + "','" + txt_Resources.Text + "')";
+                handler.InsertData(StudentNumber, txt_StdName.Text, txt_StdSurname.Text, Images, txt_Birthdate.Text, txt_Gender.Text
+                    , Phone, txt_Address.Text, txt_ModCode.Text, txt_ModName.Text, txt_ModDescrip.Text, 
+                    txt_Resources.Text); 
+                //command.Parameters.Add(new SqlParameter("@Images", img));
+                //command.Parameters.Add("@Images", SqlDbType.VarBinary, 8000).Value = img;
 
-                SqlCommand command = new SqlCommand(insertQuery, con);
-                command.Parameters.Add(new SqlParameter("@Images", Images));
-                int n = command.ExecuteNonQuery();
-                
                 MessageBox.Show("Data has been successfully inserted into the database");
 
                     txt_StudentNo.Clear();
@@ -62,8 +55,7 @@ namespace PRG282_Project
                     txt_ModDescrip.Clear();
                     txt_Phone.Clear();
                     txt_Resources.Clear();
-                    pictureBox_StdImage = null;
-               
+                    pictureBox_StdImage = null;         
             }
             catch (Exception error)
             {
@@ -81,7 +73,7 @@ namespace PRG282_Project
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 imgLocation = openFileDialog.FileName.ToString();
-                pictureBox_StdImage.ImageLocation = imgLocation;
+                pictureBox_StdImage.ImageLocation = imgLocation;                
             }
         }
     }

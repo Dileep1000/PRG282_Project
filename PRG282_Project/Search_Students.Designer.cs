@@ -84,6 +84,7 @@
             this.btn_SearchForStudent.TabIndex = 34;
             this.btn_SearchForStudent.Text = "Search";
             this.btn_SearchForStudent.UseVisualStyleBackColor = false;
+            this.btn_SearchForStudent.Click += new System.EventHandler(this.btn_SearchForStudent_Click);
             // 
             // dataGridView_SearchStd
             // 
